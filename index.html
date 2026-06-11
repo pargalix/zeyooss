@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeyoooss❤️</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: radial-gradient(circle at center, #1a0810 0%, #060306 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    overflow: hidden;
+  }
+  .peony-wrap, .carn-wrap {
+  filter: drop-shadow(0 0 8px rgba(242, 167, 195, 0.2));
+  }
+
+  .scene {
+    position: relative;
+    width: 520px;
+    height: 520px;
+  }
+
+  .heart-wrap {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 200px;
+    opacity: 0;
+    animation: appear 0.1s 0.2s forwards;
+  }
+  @keyframes appear { to { opacity: 1; } }
+
+  #heart-svg { width: 220px; height: 200px; overflow: visible; }
+
+  .heart-fill {
+    fill: #e8294a;
+    opacity: 0;
+    filter: drop-shadow(0 0 18px rgba(232,41,74,0.7)) drop-shadow(0 0 40px rgba(232,41,74,0.35));
+    animation: heartFill 0.7s ease-out 2.4s forwards;
+  }
+  .heart-stroke {
+    fill: none;
+    stroke: #e8294a;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    filter: drop-shadow(0 0 6px rgba(232,41,74,0.9));
+    animation: drawHeart 2s ease-out 0.3s forwards;
+  }
+  @keyframes drawHeart {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes heartFill {
+    to { opacity: 1; }
+  }
+
+  .heart-fill.beating {
+    animation: heartFill 0.7s ease-out 2.4s forwards, heartbeat 1.6s ease-in-out 3.2s infinite;
+  }
+ @keyframes heartbeat {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(232,41,74,0.6)); }
+  18%      { transform: scale(1.08); filter: drop-shadow(0 0 30px rgba(232,41,74,0.95)) drop-shadow(0 0 60px rgba(232,41,74,0.4)); }
+  36%      { transform: scale(1); filter: drop-shadow(0 0 15px rgba(232,41,74,0.6)); }
+  52%      { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(232,41,74,0.8)); }
+  68%      { transform: scale(1); filter: drop-shadow(0 0 15px rgba(232,41,74,0.6)); }
+}
+
+  .sparkle {
+    position: absolute;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #ff8fa0;
+    opacity: 0;
+    animation: sparkleAnim 2s ease-in-out infinite;
+  }
+  .sparkle:nth-child(1) { top: 20%; left: 15%; animation-delay: 3.2s; }
+  .sparkle:nth-child(2) { top: 10%; left: 50%; animation-delay: 3.7s; }
+  .sparkle:nth-child(3) { top: 20%; right: 15%; animation-delay: 4.1s; }
+  .sparkle:nth-child(4) { top: 50%; left: 8%;  animation-delay: 4.5s; }
+  .sparkle:nth-child(5) { top: 50%; right: 8%; animation-delay: 3.9s; }
+  .sparkle:nth-child(6) { bottom: 25%; left: 20%; animation-delay: 4.3s; }
+  .sparkle:nth-child(7) { bottom: 25%; right: 20%; animation-delay: 3.5s; }
+  @keyframes sparkleAnim {
+    0%   { opacity: 0; transform: scale(0) translateY(0); }
+    30%  { opacity: 1; transform: scale(1.8) translateY(-6px); }
+    70%  { opacity: 0.6; }
+    100% { opacity: 0; transform: scale(0) translateY(-16px); }
+  }
+
+  .peony-wrap {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    width: 180px;
+    height: 210px;
+    opacity: 0;
+    animation: slideInLeft 0.8s cubic-bezier(0.22,1,0.36,1) 3.8s forwards;
+  }
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  #peony-svg { width: 180px; height: 210px; overflow: visible; }
+
+  .p-stroke {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+  }
+  .p-fill { opacity: 0; }
+
+  .p1.p-stroke { stroke: #f2a7c3; stroke-width: 1.7; animation: pDraw 1.4s ease-out 4.0s forwards; }
+  .p1.p-fill   { fill: #f2a7c3;  animation: pFill 0.5s ease-out 5.3s forwards; }
+  .p2.p-stroke { stroke: #ee8db5; stroke-width: 1.7; animation: pDraw 1.2s ease-out 4.3s forwards; }
+  .p2.p-fill   { fill: #ee8db5;  animation: pFill 0.5s ease-out 5.4s forwards; }
+  .p3.p-stroke { stroke: #e876a8; stroke-width: 1.7; animation: pDraw 1.2s ease-out 4.6s forwards; }
+  .p3.p-fill   { fill: #e876a8;  animation: pFill 0.5s ease-out 5.5s forwards; }
+  .p4.p-stroke { stroke: #e45fa0; stroke-width: 1.7; animation: pDraw 1.0s ease-out 4.9s forwards; }
+  .p4.p-fill   { fill: #e45fa0;  animation: pFill 0.5s ease-out 5.6s forwards; }
+  .p-center    { fill: #c0336e;  opacity: 0; animation: pFill 0.4s ease-out 5.8s forwards; }
+  .p-leaf.p-stroke  { stroke: #3d6b4a; stroke-width: 1.5; animation: pDraw 0.8s ease-out 5.9s forwards; }
+  .p-leaf.p-fill    { fill: #3d6b4a; animation: pFill 0.4s ease-out 6.6s forwards; }
+  .p-stem { stroke: #3d6b4a; stroke-width: 2.2; fill: none; stroke-dasharray: 300; stroke-dashoffset: 300; animation: pDraw 0.6s ease-out 3.9s forwards; }
+
+  @keyframes pDraw { to { stroke-dashoffset: 0; } }
+  @keyframes pFill { to { opacity: 1; } }
+
+  .carn-wrap {
+    position: absolute;
+    bottom: 80px;
+    right: 10px;
+    width: 160px;
+    height: 210px;
+    opacity: 0;
+    animation: slideInRight 0.8s cubic-bezier(0.22,1,0.36,1) 7s forwards;
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  #carn-svg { width: 160px; height: 210px; overflow: visible; }
+
+  .c-stroke {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+  }
+  .c-fill { opacity: 0; }
+
+  .c1.c-stroke { stroke: #c0392b; stroke-width: 1.7; animation: pDraw 1.4s ease-out 7.2s forwards; }
+  .c1.c-fill   { fill: #c0392b; animation: pFill 0.5s ease-out 8.5s forwards; }
+  .c2.c-stroke { stroke: #a93226; stroke-width: 1.7; animation: pDraw 1.2s ease-out 7.5s forwards; }
+  .c2.c-fill   { fill: #a93226; animation: pFill 0.5s ease-out 8.6s forwards; }
+  .c3.c-stroke { stroke: #922b21; stroke-width: 1.7; animation: pDraw 1.0s ease-out 7.8s forwards; }
+  .c3.c-fill   { fill: #922b21; animation: pFill 0.5s ease-out 8.7s forwards; }
+  .c-stem  { stroke: #3d6b4a; stroke-width: 2.2; fill: none; stroke-dasharray: 300; stroke-dashoffset: 300; animation: pDraw 0.6s ease-out 7.1s forwards; }
+  .c-leaf.c-stroke { stroke: #3d6b4a; stroke-width: 1.5; animation: pDraw 0.8s ease-out 8.8s forwards; }
+  .c-leaf.c-fill   { fill: #3d6b4a; animation: pFill 0.4s ease-out 9.5s forwards; }
+
+  .message {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0;
+    animation: msgIn 1.4s ease-out 9.8s forwards;
+  }
+  .message h1 {
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+  }
+  .message h1 em {
+    font-style: italic;
+    color: #f2a7c3;
+    font-weight: 400;
+  }
+  .message .sub {
+    display: block;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 4px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  @keyframes msgIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+
+  <!-- KALP -->
+  <div class="heart-wrap">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <svg id="heart-svg" viewBox="0 0 220 200">
+      <path class="heart-fill beating"
+        d="M110 180 C110 180 20 122 20 72 C20 44 40 26 68 30 C84 33 98 44 110 58 C122 44 136 33 152 30 C180 26 200 44 200 72 C200 122 110 180 110 180Z"/>
+      <path class="heart-stroke"
+        d="M110 180 C110 180 20 122 20 72 C20 44 40 26 68 30 C84 33 98 44 110 58 C122 44 136 33 152 30 C180 26 200 44 200 72 C200 122 110 180 110 180Z"/>
+    </svg>
+  </div>
+
+  <!-- ŞAKAYIK -->
+  <div class="peony-wrap">
+    <svg id="peony-svg" viewBox="0 0 180 210">
+      <!-- sap -->
+      <line class="p-stem" x1="90" y1="170" x2="90" y2="210"/>
+      <!-- fills (alttan üste) -->
+      <ellipse class="p1 p-fill" cx="90" cy="90" rx="52" ry="46"/>
+      <ellipse class="p2 p-fill" cx="72" cy="78" rx="36" ry="30"/>
+      <ellipse class="p2 p-fill" cx="108" cy="78" rx="36" ry="30"/>
+      <ellipse class="p3 p-fill" cx="90" cy="68" rx="30" ry="26"/>
+      <ellipse class="p3 p-fill" cx="68" cy="62" rx="24" ry="20"/>
+      <ellipse class="p3 p-fill" cx="112" cy="62" rx="24" ry="20"/>
+      <ellipse class="p4 p-fill" cx="90" cy="58" rx="20" ry="18"/>
+      <circle  class="p-center"  cx="90" cy="90" r="14"/>
+      <!-- yapraklar fill -->
+      <path class="p-leaf p-fill" d="M60 138 Q38 152 28 168 Q48 156 64 144Z"/>
+      <path class="p-leaf p-fill" d="M120 138 Q142 152 152 168 Q132 156 116 144Z"/>
+      <!-- strokes (üstte görünsün) -->
+      <ellipse class="p1 p-stroke" cx="90" cy="90" rx="52" ry="46"/>
+      <ellipse class="p2 p-stroke" cx="72" cy="78" rx="36" ry="30"/>
+      <ellipse class="p2 p-stroke" cx="108" cy="78" rx="36" ry="30"/>
+      <ellipse class="p3 p-stroke" cx="90" cy="68" rx="30" ry="26"/>
+      <ellipse class="p3 p-stroke" cx="68" cy="62" rx="24" ry="20"/>
+      <ellipse class="p3 p-stroke" cx="112" cy="62" rx="24" ry="20"/>
+      <ellipse class="p4 p-stroke" cx="90" cy="58" rx="20" ry="18"/>
+      <!-- yapraklar stroke -->
+      <path class="p-leaf p-stroke" d="M60 138 Q38 152 28 168 Q48 156 64 144Z"/>
+      <path class="p-leaf p-stroke" d="M120 138 Q142 152 152 168 Q132 156 116 144Z"/>
+    </svg>
+  </div>
+
+  <!-- KARANFİL -->
+  <div class="carn-wrap">
+    <svg id="carn-svg" viewBox="0 0 160 210">
+      <!-- sap -->
+      <line class="c-stem" x1="80" y1="168" x2="80" y2="210"/>
+      <!-- fills -->
+      <path class="c1 c-fill" d="M80 28 Q58 8 44 22 Q34 36 52 48 Q32 42 30 58 Q28 76 50 72 Q34 84 40 100 Q48 116 66 104 Q62 120 74 128 L80 134 L86 128 Q98 120 94 104 Q112 116 120 100 Q126 84 110 72 Q132 76 130 58 Q128 42 108 48 Q126 36 116 22 Q102 8 80 28Z"/>
+      <path class="c2 c-fill" d="M80 42 Q62 26 52 38 Q46 50 60 58 Q44 54 42 66 Q40 80 58 76 Q46 86 50 98 Q56 110 70 100 Q68 114 78 120 L80 122 L82 120 Q92 114 90 100 Q104 110 110 98 Q114 86 102 76 Q120 80 118 66 Q116 54 100 58 Q114 50 108 38 Q98 26 80 42Z"/>
+      <path class="c3 c-fill" d="M80 56 Q66 44 60 54 Q56 64 66 70 Q54 66 52 76 Q50 88 64 84 Q56 94 60 104 Q66 114 76 106 L80 118 L84 106 Q94 114 100 104 Q104 94 96 84 Q110 88 108 76 Q106 66 94 70 Q104 64 100 54 Q94 44 80 56Z"/>
+      <!-- yaprak fill -->
+      <path class="c-leaf c-fill" d="M80 150 Q58 140 50 152 Q58 164 80 154Z"/>
+      <!-- strokes -->
+      <path class="c1 c-stroke" d="M80 28 Q58 8 44 22 Q34 36 52 48 Q32 42 30 58 Q28 76 50 72 Q34 84 40 100 Q48 116 66 104 Q62 120 74 128 L80 134 L86 128 Q98 120 94 104 Q112 116 120 100 Q126 84 110 72 Q132 76 130 58 Q128 42 108 48 Q126 36 116 22 Q102 8 80 28Z"/>
+      <path class="c2 c-stroke" d="M80 42 Q62 26 52 38 Q46 50 60 58 Q44 54 42 66 Q40 80 58 76 Q46 86 50 98 Q56 110 70 100 Q68 114 78 120 L80 122 L82 120 Q92 114 90 100 Q104 110 110 98 Q114 86 102 76 Q120 80 118 66 Q116 54 100 58 Q114 50 108 38 Q98 26 80 42Z"/>
+      <path class="c3 c-stroke" d="M80 56 Q66 44 60 54 Q56 64 66 70 Q54 66 52 76 Q50 88 64 84 Q56 94 60 104 Q66 114 76 106 L80 118 L84 106 Q94 114 100 104 Q104 94 96 84 Q110 88 108 76 Q106 66 94 70 Q104 64 100 54 Q94 44 80 56Z"/>
+      <path class="c-leaf c-stroke" d="M80 150 Q58 140 50 152 Q58 164 80 154Z"/>
+    </svg>
+  </div>
+
+  <!-- YAZI -->
+  <div class="message">
+    <h1>Seni çok <em>seviyorum</em></h1>
+    <span class="sub">her zaman &amp; koşulsuz</span>
+  </div>
+
+</div>
+</body>
+</html>
